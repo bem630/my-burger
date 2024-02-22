@@ -1,6 +1,14 @@
 import React from 'react'
 import { useState } from "react";
 import {useNavigate } from "react-router-dom"
+import styled from "styled-components"
+import { theme } from "../../../theme"
+import Button from '../../reusable-ui/Button';
+import TextInput from '../../reusable-ui/TextInput';
+import Welcome from './Welcome';
+import { BsPersonCircle } from "react-icons/bs"
+import { IoChevronForward } from "react-icons/io5"
+
 export default function LoginPage() {
     //state
     const [inputValue, setInputValue] = useState("")
@@ -18,16 +26,49 @@ export default function LoginPage() {
 
   //Affichage
   return (
-    <form action="submit" onSubmit={handleSubmit}>
-        <h1>bienvenue chez nous !</h1>
-        <h1>Connectez vous</h1>
-        <input 
-          value={inputValue} 
+    <LoginFormStyled action="submit" onSubmit={handleSubmit}>
+        <Welcome/>
+        <TextInput
+          value={inputValue}
           onChange={handleChange} 
-          type="text" 
-          placeholder="Entrez votre prénom..." 
-          required />
-        <button>Accéder à votre espace</button>
-      </form>
+          placeholder={"Entrez votre prénom"}
+          required 
+          Icon={<BsPersonCircle className="icon" />}
+        />
+        <Button 
+          label ={"Accéder à mon espace"}
+          Icon={<IoChevronForward className="icon" />} />
+      </LoginFormStyled>
   )
 }
+
+const LoginFormStyled = styled.form`
+  text-align: center;
+  max-width: 500px;
+  min-width: 400px;
+  margin: 0px auto;
+  padding: 40px ${theme.spacing.lg};
+  border-radius: ${theme.borderRadius.round};
+  font-family: "Amatic SC", cursive;
+
+  hr {
+    border: 1.5px solid ${theme.colors.loginLine};
+    margin-bottom: ${theme.gridUnit * 5}px;
+  }
+
+  h1 {
+    color: ${theme.colors.white};
+    font-size: ${theme.fonts.size.P5};
+  }
+
+  h2 {
+    margin: 20px 10px 10px;
+    color: ${theme.colors.white};
+    font-size: ${theme.fonts.size.P4};
+  }
+
+  .input-login {
+    margin: 18px 0; // must be handled in Parent
+  }
+`
+
