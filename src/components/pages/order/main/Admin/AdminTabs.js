@@ -4,7 +4,9 @@ import { theme } from '../../../../../theme'
 
 export default function AdminTabs() {
   return (
-    <AdminTabsStyled>AdminTabs</AdminTabsStyled>
+    <AdminTabsStyled>
+      <p>AdminTabs</p>
+    </AdminTabsStyled>
   )
 }
 

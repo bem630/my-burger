@@ -8,7 +8,7 @@ import ToastAdmin from './ToastAdmin';
 import OrderContext from '../../../../context/OrderContext';
 
 export default function NavbarRightSide() {
-  const { isModeAdmin, setIsModeAdmin } = useContext(OrderContext);
+  const { isModeAdmin, setIsModeAdmin } = useContext(OrderContext)
 
   const displayToastify = () => { 
     if(!isModeAdmin) {

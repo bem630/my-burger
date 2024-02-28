@@ -1,19 +1,17 @@
-import React, { useContext, useState } from 'react'
+import React from 'react'
 import AdminTabs from './AdminTabs'
 import AdminPanel from './AdminPanel'
 import styled from 'styled-components'
-import OrderContext from '../../../../../context/OrderContext'
 
 export default function Admin() {
     //State
-    const {isModeAdmin,setIsModeAdmin} = useContext(OrderContext)
 
     //comportements
     
 
     //affichage
   return (
-    <AdminStyled isChecked={isModeAdmin}>
+    <AdminStyled>
         <AdminTabs/>
         <AdminPanel/>
     </AdminStyled>

@@ -5,8 +5,7 @@ import { theme } from '../../../../../theme';
 export default function AdminPanel() {
   return (
     <AdminPanelStyled>
-      <p></p>
-      <p></p>
+      <p>AdminPanel</p>
     </AdminPanelStyled>
   )
 }

@@ -7,20 +7,19 @@ import OrderContext from '../../../context/OrderContext';
 
 export default function OrderPage() {
   const [isModeAdmin, setIsModeAdmin] = useState(false)
-
-  const orderContextValue = {
-    isModeAdmin,setIsModeAdmin
-  }
-    
+  
+    const orderContextValue = {
+      isModeAdmin, setIsModeAdmin
+    }
   return (
-      <OrderContext.Provider value={orderContextValue}>
-        <OrderPageStyled>
+        <OrderContext.Provider value={orderContextValue}>
+          <OrderPageStyled>
             <div className="container">
               <Navbar/>
               <Main/>
             </div>
-        </OrderPageStyled>
-      </OrderContext.Provider>
+          </OrderPageStyled>
+        </OrderContext.Provider>
   )
 }
 
