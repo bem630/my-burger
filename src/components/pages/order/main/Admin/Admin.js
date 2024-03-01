@@ -1,19 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import AdminTabs from './AdminTabs'
 import AdminPanel from './AdminPanel'
 import styled from 'styled-components'
+import OrderContext from '../../../../../context/OrderContext'
 
 export default function Admin() {
     //State
-
+    const { isCollapsed } = useContext(OrderContext)
     //comportements
     
 
     //affichage
   return (
     <AdminStyled>
-        <AdminTabs/>
-        <AdminPanel/>
+        <AdminTabs />
+        {!isCollapsed && <AdminPanel/>}
     </AdminStyled>
   )
 }
