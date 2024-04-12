@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-import { theme } from '../../../../../theme'
-import Tab from '../../../../reusable-ui/Tab'
+import { theme } from '../../../../../../theme'
+import Tab from '../../../../../reusable-ui/Tab'
 import { FiChevronUp,FiChevronDown } from "react-icons/fi";
-import OrderContext from '../../../../../context/OrderContext';
+import OrderContext from '../../../../../../context/OrderContext';
 import { tabsConfig } from './tabsConfig';
 
 

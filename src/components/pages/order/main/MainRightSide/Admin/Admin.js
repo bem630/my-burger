@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import AdminTabs from './AdminTabs'
-import AdminPanel from './AdminPanel'
+import AdminPanel from './AdminPanel/AdminPanel'
 import styled from 'styled-components'
-import OrderContext from '../../../../../context/OrderContext'
+import OrderContext from '../../../../../../context/OrderContext'
 
 export default function Admin() {
     //State

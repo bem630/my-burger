@@ -1,9 +1,13 @@
 import React from 'react'
+import styled from 'styled-components'
 
 export default function Basket() {
   return (
-    <div>
+    <BasketStyled>
         Basket
-    </div>
+    </BasketStyled>
   )
 }
+const BasketStyled = styled.div`
+  background: pink;
+`

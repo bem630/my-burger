@@ -1,10 +1,10 @@
 import React from 'react'
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { theme } from '../../theme';
 
-export default function Button({label, className, Icon}) {
+export default function Button({label, className, Icon,version = "normal", onClick}) {
   return (
-    <ButtonStyled className={className}>
+    <ButtonStyled className={className} version={version} onClick={onClick}>
         <span>{label}</span>
         <div className="icon">{Icon && Icon}</div>
     </ButtonStyled>
@@ -12,6 +12,9 @@ export default function Button({label, className, Icon}) {
 }
 
 const ButtonStyled = styled.button`
+  ${({version}) => extraStyle[version]}`;
+
+const extraStylePrimary = css`
   width: 100%;
   border: 1px solid red;
   display: inline-flex;
@@ -68,3 +71,28 @@ const ButtonStyled = styled.button`
     align-items: center;
   }
 `;
+
+const extraStyleSuccess = css`
+  cursor: pointer;
+  color: ${theme.colors.white};
+  background: ${theme.colors.success};
+  border: 1px solid ${theme.colors.success};
+  border-radius: ${theme.borderRadius.round};
+  height: 35px;
+  padding: 0 1.5em;
+  font-weight: ${theme.fonts.weights.semiBold};
+  &:hover {
+    background: ${theme.colors.white};
+    color: ${theme.colors.success};
+    border: 1px solid ${theme.colors.success};
+  }
+  &:active {
+    color: ${theme.colors.white};
+    background: ${theme.colors.success};
+    border: 1px solid ${theme.colors.success};
+  }
+`
+const extraStyle = {
+  normal: extraStylePrimary,
+  success: extraStyleSuccess,
+}
