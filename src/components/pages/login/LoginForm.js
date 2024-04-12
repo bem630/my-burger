@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState } from "react";
+import React, { useState } from 'react'
 import {useNavigate } from "react-router-dom"
 import styled from "styled-components"
 import { theme } from "../../../theme"
@@ -16,6 +15,7 @@ export default function LoginPage() {
 
     //comportements
   const handleSubmit = (event) => { 
+    event.preventDefault()
     navigate(`order/${inputValue}`)
     setInputValue("");
    }
@@ -28,16 +28,19 @@ export default function LoginPage() {
   return (
     <LoginFormStyled action="submit" onSubmit={handleSubmit}>
         <Welcome/>
-        <TextInput
-          value={inputValue}
-          onChange={handleChange} 
-          placeholder={"Entrez votre prénom"}
-          required 
-          Icon={<BsPersonCircle className="icon" />}
-        />
-        <Button 
-          label ={"Accéder à mon espace"}
-          Icon={<IoChevronForward className="icon" />} />
+        <div>
+          <TextInput
+            value={inputValue}
+            onChange={handleChange}
+            placeholder={"Entrez votre prénom"}
+            required
+            Icon={<BsPersonCircle />}
+            className="input-login"
+            version="normal"
+          />
+
+          <Button label={"Accéder à mon espace"} Icon={<IoChevronForward />} />
+        </div>
       </LoginFormStyled>
   )
 }
